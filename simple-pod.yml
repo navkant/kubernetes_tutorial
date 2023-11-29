@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sample-pod
+  labels:
+    app: sample-app
+spec:
+  containers:
+    - name: sample-ctr
+      image: devopstrainer/deploy
+      ports:
+        - containerPort: 80
