@@ -52,7 +52,7 @@ gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cl
     run this command on any worker node to join the cluster
 
 12. On master node create .kube directory in home directory
-        `mkdir -p $HOME/.kube`
+        `sudo mkdir -p $HOME/.kube`
     copy admin file from kubernetes conf to .kube/config
         `sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config`
     
@@ -64,10 +64,13 @@ gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cl
 
 14. Run 
         `kubectl apply -f https://docs.projectcalico.org/v3.3/getting-started/kubernetes/installation/hosted/rbac-kdd.yaml`
-        `https://docs.projectcalico.org/v3.8/getting-started/kubernetes/installation/hosted/kubernetes-datastore/calico-networking/1.7/calico.yaml`
+        `kubectl apply -f https://docs.projectcalico.org/v3.8/getting-started/kubernetes/installation/hosted/kubernetes-datastore/calico-networking/1.7/calico.yaml`
 
 15. Run ` kubectl get po -A` to list all pods
 
 
+16. To create a pod run `kubectl create/apply -f <nameof file.yml>`
 
+17. To delete a pod run `kubectl delete po <name of pod>`
 
+18. to get details of all pods `kubectl get po -o wide`.
